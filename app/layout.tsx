@@ -3,6 +3,7 @@ import Link from "next/link";
 import FloatingAI from "@/components/FloatingAI";
 import AuthorityBanner from "@/components/AuthorityBanner";
 import NavLinks from "@/components/NavLinks";
+import Logo from "@/components/Logo";
 
 export const metadata = {
   title: "Ritumoni Sarma — Staff Engineer | Frontend Architect with AI Integration",
@@ -21,10 +22,7 @@ export default function RootLayout({
 
         <nav className="fixed top-0 left-0 w-full bg-[#0f172a]/80 backdrop-blur-xl border-b border-white/10 z-50">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between">
-            <Link href="/" className="font-semibold">
-              Ritu
-            </Link>
-
+            <Logo />
             <div className="space-x-6 text-sm">
               <NavLinks route="/routes/experience" label="Experience" />
               <NavLinks route="/routes/architecture" label="Architecture" />

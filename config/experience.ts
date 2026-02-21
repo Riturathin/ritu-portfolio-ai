@@ -87,7 +87,21 @@ export const experienceData = [
             "Micro-frontend system design",
             "Enterprise performance engineering",
             "AI-integrated frontend systems"
-        ]
+        ],
+
+        leadership: {
+            directPeopleManagement: true,
+            technicalLeadership: true,
+            teamsInfluenced: 11,
+            engineersImpacted: 110,
+            responsibilities: [
+                "Mentored engineers across teams.",
+                "Influenced architectural decisions across multiple organisations.",
+                "Facilitated inter-team architecture sync meetings.",
+                "Provided technical direction and delivery oversight.",
+                "Contributed to governance and performance accountability."
+            ]
+        },
     },
 
     /* ===================== UPSTOX ===================== */

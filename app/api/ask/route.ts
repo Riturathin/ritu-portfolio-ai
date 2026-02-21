@@ -1,11 +1,68 @@
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { experienceData } from "@/config/experience";
 import { checkRateLimit } from "@/lib/rateLimit";
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
+
+// Precompute total experience
+function calculateTotalExperience() {
+    return "13+ years"; // keep deterministic for portfolio
+}
+
+// Build full portfolio context
+function buildPortfolioContext() {
+    let text = `
+PORTFOLIO SUMMARY
+Total Professional Experience: ${calculateTotalExperience()}
+
+`;
+
+    experienceData.forEach((exp) => {
+        text += `
+========================================
+COMPANY: ${exp.company}
+ROLE: ${exp.role}
+PERIOD: ${exp.period}
+POSITIONING: ${exp.positioning}
+
+ARCHITECTURAL CONTRIBUTIONS:
+${exp.highlights?.map((h) => `- ${h}`).join("\n")}
+
+`;
+
+        if (exp.metrics?.length) {
+            text += `
+MEASURABLE IMPACT:
+${exp.metrics.map((m) => `- ${m}`).join("\n")}
+
+`;
+        }
+
+        if (exp.leadership) {
+            text += `
+LEADERSHIP SCOPE:
+- Direct People Management: ${exp.leadership.directPeopleManagement}
+- Technical Leadership: ${exp.leadership.technicalLeadership}
+- Teams Influenced: ${exp.leadership.teamsInfluenced}
+- Engineers Impacted: ${exp.leadership.engineersImpacted}
+${exp.leadership.responsibilities
+                    ?.map((r) => `- ${r}`)
+                    .join("\n")}
+
+`;
+        }
+
+        text += `
+TECHNOLOGY THEMES:
+${exp.themes?.map((t) => `- ${t}`).join("\n")}
+`;
+    });
+
+    return text;
+}
 
 export async function POST(req: Request) {
     try {
@@ -19,39 +76,11 @@ export async function POST(req: Request) {
             );
         }
 
-        // 1️⃣ Create embedding for question
-        const embeddingResponse = await openai.embeddings.create({
-            model: "text-embedding-3-small",
-            input: question,
-        });
+        const context = buildPortfolioContext();
 
-        const queryEmbedding = embeddingResponse.data[0].embedding;
-
-        // 2️⃣ Retrieve similar documents
-        const { data: documents, error } = await supabase.rpc(
-            "match_documents",
-            {
-                query_embedding: queryEmbedding,
-                match_count: 10,
-            }
-        );
-
-        if (error) {
-            console.error(error);
-            return NextResponse.json(
-                { error: "Vector search failed" },
-                { status: 500 }
-            );
-        }
-
-        const context = documents
-            ?.map((doc: any) => doc.content)
-            .join("\n\n");
-
-        // 3️⃣ Generate answer using retrieved context
         const completion = await openai.chat.completions.create({
             model: "gpt-4o-mini",
-            temperature: 0.3,
+            temperature: 0.2,
             messages: [
                 {
                     role: "system",
@@ -61,11 +90,8 @@ You are an AI assistant for Ritu's portfolio website.
 STRICT RULES:
 - Answer ONLY using the provided context.
 - If information is not in context, say "This information is not available."
-- If multiple questions are asked, answer each separately and bold the question in the answer with 16px.
-- Highlight the impact point values in bold.
-- Add a dashed divider between answers for multiple questions.
 - Always refer to Ritu as "He".
-- For each question:
+- If multiple questions are asked, answer each separately.
 - Format exactly like this:
 
 **<Question>**
@@ -73,15 +99,10 @@ STRICT RULES:
 **Answer:**
 - bullet point
 - bullet point
-- Format like:
 
-**<Question>**
-
-**Answer:**
-- bullet points
-- Be concise.
-- Be recruiter-friendly.
-- Do not speculate.
+Be concise.
+Be recruiter-friendly.
+Do not speculate.
 
 CONTEXT:
 ${context}
