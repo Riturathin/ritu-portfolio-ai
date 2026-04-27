@@ -28,7 +28,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="text-6xl md:text-7xl font-bold leading-tight tracking-tight text-white"
           >
-            Staff Engineer —
+            Senio Staff Engineer / UI Architect —
             <br />
             Frontend Architecture
             <br />

@@ -15,7 +15,7 @@ export default function AuthorityBanner() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
 
                     <div>
-                        <h3 className="text-3xl font-bold text-white" >13+</h3>
+                        <h3 className="text-3xl font-bold text-white" >14+</h3>
                         <p className="text-sm text-white/60">
                             Years Experience
                         </p>

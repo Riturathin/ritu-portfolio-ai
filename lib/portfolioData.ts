@@ -15,7 +15,9 @@ Tech Stack:
 - Node.js
 - REST & GraphQL
 - Tailwind
-- Framer Motion
+- Frontend Architecture
+- UI Design Systems
+- System Design
 
 Key Strengths:
 - Scalable architecture design

@@ -3,9 +3,9 @@ export const experienceData = [
     /* ===================== INDEPENDENT ===================== */
 
     {
-        company: "Independent",
-        role: "Independent Staff Frontend Engineer",
-        period: "Sep 2025 – Present",
+        company: "AlgoDuel",
+        role: "Senior Staff Engineer / UI Architect",
+        period: "Oct 2025 – Present",
         positioning: "AI-Native Frontend Systems & Developer Tooling",
 
         context: [
@@ -14,15 +14,19 @@ export const experienceData = [
         ],
 
         highlights: [
-            "Architected AI Code Assistant leveraging repository context and architectural metadata.",
-            "Built AI-powered React experimentation platform for validating architectural patterns.",
-            "Designed micro-frontend sandbox systems for runtime isolation experimentation.",
+            "Engineering Excellence & Governance: Established RFC (Request for Comments) processes for frontend architectural changes, reducing technical debt and aligning cross-functional teams on long-term UI strategy.",
+            "Performance at Scale: Optimized Core Web Vitals across enterprise platforms, achieving a 40% improvement in LCP (Largest Contentful Paint) through advanced code-splitting and asset prioritization strategies.",
+            "Design Systems & Tooling: Architected a multi-brand, themeable design system using CSS Variables and Headless UI, reducing front-end development time for new features by 30%.",
+            "Security & Compliance: Implemented automated security scanning for frontend dependencies and CSP (Content Security Policy) automation to mitigate XSS risks across micro-frontend micro-apps.",
+            "AI Integration: Developed an automated UI testing suite leveraging LLMs to generate visual regression tests based on design-to-code diffs."
         ],
 
         themes: [
-            "AI-native frontend systems",
-            "Developer tooling automation",
-            "Micro-frontend experimentation",
+            'Scalable Micro-Frontend Governance: Moving beyond just "using" MFEs to governing how they interact, share state, and maintain version consistency.',
+            "Declarative UI Engines: Building systems where UIs are driven by metadata or JSON schemas, allowing non-engineers to modify layouts without code deployments.",
+            "Observability & Monitoring: Shifting from standard logging to deep frontend telemetry (tracking user flows, error boundaries, and client-side performance bottlenecks).",
+            "Local-First & Offline Architectures: Implementing sophisticated caching and synchronization layers (like IndexedDB or CRDTs) for high-performance, real-time applications.",
+            "DX (Developer Experience) Automation: Creating custom CLI tools, scaffolding engines, or CI/CD pipelines specifically tuned for frontend monorepos."
         ]
     },
 
