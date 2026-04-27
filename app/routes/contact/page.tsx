@@ -110,7 +110,7 @@ export default function Contact() {
                         <div className="mt-10 space-y-6">
 
                             <a
-                                href="/Resume.pdf"
+                                href="/Ritumoni Sarma.pdf"
                                 target="_blank"
                                 className="
                   block
