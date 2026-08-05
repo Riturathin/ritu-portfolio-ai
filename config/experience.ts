@@ -1,4 +1,6 @@
-export const experienceData = [
+import { Experience } from "@/types/experience";
+
+export const experienceData: Experience[] = [
 
     /* ===================== INDEPENDENT ===================== */
 
