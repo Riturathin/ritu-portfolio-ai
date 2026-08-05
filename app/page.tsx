@@ -28,11 +28,9 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="text-6xl md:text-7xl font-bold leading-tight tracking-tight text-white"
           >
-            Senio Staff Engineer / UI Architect —
+            Principal Software Engineer | UI Architect
             <br />
-            Frontend Architecture
-            <br />
-            & AI Systems
+
           </motion.h1>
 
           <motion.p
@@ -41,6 +39,14 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="mt-10 text-xl text-white/70 max-w-2xl"
           >
+            Open-Source Contributor
+
+            <br />
+            <br />
+            Full-stack development - Node, Kafka, Redis, Python , AI-accelerated development  & AI Systems
+            <br />
+
+            <br />
             Designing scalable frontend platforms and AI-integrated systems
             across enterprise environments.
           </motion.p>

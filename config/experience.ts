@@ -3,109 +3,87 @@ export const experienceData = [
     /* ===================== INDEPENDENT ===================== */
 
     {
-        company: "AlgoDuel",
-        role: "Senior Staff Engineer / UI Architect",
-        period: "Oct 2025 – Present",
-        positioning: "AI-Native Frontend Systems & Developer Tooling",
+        company: "micro1",
+        role: "Senior Staff Engineer",
+        location: "Remote",
+        period: "Apr 2026 – Present",
+        positioning: "AI-Native Enterprise Platform Architecture",
 
-        context: [
-            "Focused on AI-native frontend architecture and developer productivity systems.",
-            "Exploring integration of LLM-based tooling into frontend engineering workflows."
+        technologies: [
+            "React",
+            "Node.js",
+            "Express.js",
+            "GraphQL",
+            "REST APIs",
+            "Kafka",
+            "Redis",
+            "LLMs"
         ],
 
         highlights: [
-            "Engineering Excellence & Governance: Established RFC (Request for Comments) processes for frontend architectural changes, reducing technical debt and aligning cross-functional teams on long-term UI strategy.",
-            "Performance at Scale: Optimized Core Web Vitals across enterprise platforms, achieving a 40% improvement in LCP (Largest Contentful Paint) through advanced code-splitting and asset prioritization strategies.",
-            "Design Systems & Tooling: Architected a multi-brand, themeable design system using CSS Variables and Headless UI, reducing front-end development time for new features by 30%.",
-            "Security & Compliance: Implemented automated security scanning for frontend dependencies and CSP (Content Security Policy) automation to mitigate XSS risks across micro-frontend micro-apps.",
-            "AI Integration: Developed an automated UI testing suite leveraging LLMs to generate visual regression tests based on design-to-code diffs."
-        ],
-
-        themes: [
-            'Scalable Micro-Frontend Governance: Moving beyond just "using" MFEs to governing how they interact, share state, and maintain version consistency.',
-            "Declarative UI Engines: Building systems where UIs are driven by metadata or JSON schemas, allowing non-engineers to modify layouts without code deployments.",
-            "Observability & Monitoring: Shifting from standard logging to deep frontend telemetry (tracking user flows, error boundaries, and client-side performance bottlenecks).",
-            "Local-First & Offline Architectures: Implementing sophisticated caching and synchronization layers (like IndexedDB or CRDTs) for high-performance, real-time applications.",
-            "DX (Developer Experience) Automation: Creating custom CLI tools, scaffolding engines, or CI/CD pipelines specifically tuned for frontend monorepos."
+            "Architected AI-native enterprise platforms integrating React, Node.js, and LLM-powered workflows for intelligent user experiences.",
+            "Designed scalable backend architecture using Node.js, Express.js, REST APIs, and GraphQL supporting AI-powered enterprise applications.",
+            "Established architecture governance across 15+ engineering teams covering API standards, dependency management, release processes, and engineering best practices.",
+            "Designed event-driven architectures leveraging Kafka and Redis for asynchronous workflows and distributed caching.",
+            "Built reusable platform components and AI-assisted engineering tooling that improved developer productivity and accelerated delivery.",
+            "Mentored senior engineers on distributed systems, platform architecture, AI engineering, and frontend performance."
         ]
     },
-
-    /* ===================== CELIGO ===================== */
 
     {
         company: "Celigo",
         role: "Senior Staff Frontend Engineer",
-        period: "2023 – Sep 2025",
-        positioning: "Frontend Platform Architect — Enterprise Integration Platform",
+        location: "Remote",
+        period: "Aug 2023 – Sep 2025",
+        positioning: "Frontend Platform Architect",
 
-        context: [
-            "Governed frontend architecture across 11 repositories and ~110 engineers.",
-            "Flagship product: integrator.io — enterprise integration platform.",
-            "Performance degradation observed as customer integration graphs scaled."
+        technologies: [
+            "React",
+            "TypeScript",
+            "Module Federation",
+            "Node.js",
+            "Express.js",
+            "REST",
+            "GraphQL",
+            "Kafka",
+            "Redis",
+            "AWS",
+            "Docker"
         ],
 
         highlights: [
-            "Designed Module Federation-based micro-frontend architecture (host/container via remote.js).",
-            "Converted monolithic routes into independently deployable MFEs.",
-            "Built new MFEs from scratch: data-ingestion, marketplace-ui, login-ui.",
-            "Reduced bundle size through route-level lazy loading and Suspense boundaries.",
-            "Implemented frontend observability using LogRocket session tracing.",
-            "Introduced SonarQube rules, GitHub pre/post-commit hooks, and autopilot quality checks.",
-            "Defined Architectural Decision Guidelines (ADGs) across 11 repos.",
-            "Integrated AI-powered customer assistant within platform workflows."
-        ],
+            "Led the transformation of a monolithic platform serving 11 business units into a Module Federation-based micro-frontend architecture, enabling independent deployments and autonomous team ownership.",
+            "Architected the frontend platform using React, TypeScript, Module Federation, and shared runtime contracts, defining federation boundaries, dependency management, and remote module lifecycle strategies.",
+            "Designed Backend-for-Frontend (BFF) services using Node.js, Express.js, REST APIs, and GraphQL, simplifying frontend integration and reducing service coupling.",
+            "Implemented event-driven integration patterns using Kafka and Redis to support asynchronous workflows, distributed caching, and scalable enterprise communication.",
+            "Collaborated with platform engineering teams to standardize AWS deployment architecture, Docker-based delivery pipelines, CI/CD automation, observability, and production monitoring.",
+            "Reduced Core Web Vitals from 11s to 2.3s through bundle optimization, lazy hydration, route-level code splitting, runtime profiling, and dependency optimization.",
+            "Reduced JavaScript bundle size by 58%, improving application startup performance and overall user experience across enterprise applications.",
+            "Built a custom dependency orchestration framework that reduced runtime conflicts by 85% across independently deployed applications.",
+            "Established engineering governance through ADRs, dependency policies, release standards, automated quality gates, and platform guardrails across six engineering teams.",
+            "Partnered with UX and Product Design to build a design-token pipeline supporting multi-brand theming, runtime customization, accessibility, and consistent design systems.",
+            "Mentored senior engineers on micro-frontends, distributed systems, API architecture, platform engineering, and frontend performance while leading architecture reviews across Frontend, Backend, DevOps, QA, Product, and Design."
+        ]
+    },
 
-        governance: [
-            "Established repo ownership boundaries across teams.",
-            "Enforced performance budgets and bundle thresholds.",
-            "Implemented canary deployment gating for controlled rollout.",
-            "Organized inter-team architectural sync sessions."
-        ],
+    {
+        company: "Lowe's Companies, Inc.",
+        role: "Technical Lead",
+        location: "Bengaluru, India",
+        period: "Aug 2021 – Apr 2023",
+        positioning: "Enterprise Platform Modernization",
 
-        beforeAfter: {
-            before: [
-                "Release coupling across repos.",
-                "High latency under scaling integration graphs.",
-                "Architectural drift and inconsistent standards."
-            ],
-            after: [
-                "Independent micro-frontend deployments.",
-                "Structured governance and domain ownership.",
-                "Improved stability and deployment frequency."
-            ]
-        },
-
-        metrics: [
-            "2× increase in deployment frequency.",
-            "47% reduction in production defects.",
-            "Significant latency reduction under high-scale usage."
-        ],
-
-        tradeoffs: [
-            "Prioritized long-term architectural integrity over short-term velocity.",
-            "Restricted pilot users via canary deployment to protect performance."
-        ],
-
-        themes: [
-            "Platform governance",
-            "Micro-frontend system design",
-            "Enterprise performance engineering",
-            "AI-integrated frontend systems"
-        ],
-
-        leadership: {
-            directPeopleManagement: true,
-            technicalLeadership: true,
-            teamsInfluenced: 11,
-            engineersImpacted: 110,
-            responsibilities: [
-                "Mentored engineers across teams.",
-                "Influenced architectural decisions across multiple organisations.",
-                "Facilitated inter-team architecture sync meetings.",
-                "Provided technical direction and delivery oversight.",
-                "Contributed to governance and performance accountability."
-            ]
-        },
+        highlights: [
+            "Designed frontend platform architecture adopted across 17+ engineering squads, establishing reusable architectural standards for enterprise applications.",
+            "Architected and developed Pharos, an enterprise Real User Monitoring (RUM) platform providing real-time n\
+            visibility into Core Web Vitals and production health.",
+            "Designed backend integration services using Node.js and Express.js to simplify enterprise API orchestration.",
+            "Partnered with cloud engineering teams on AWS deployment architecture, Docker delivery pipelines, observability, and CI/CD automation.",
+            "Led modernization initiatives generating approximately $1.6M in annual infrastructure savings through platform n\
+            consolidation and performance optimization.",
+            "Defined engineering governance covering dependency management, architecture reviews, release coordination, and n\
+            long-term platform evolution."
+        ]
     },
 
     /* ===================== UPSTOX ===================== */
