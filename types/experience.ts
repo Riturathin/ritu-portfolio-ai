@@ -18,6 +18,10 @@ export interface Experience {
     highlights: string[];
     metrics?: string[];
     themes?: string[];
-
+    beforeAfter?: {
+        before: string[];
+        after: string[];
+    };
+    tradeoffs?: string[];
     leadership?: Leadership;
 }
